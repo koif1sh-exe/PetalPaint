@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bfxro7i0gaw7l"]
+
+[ext_resource type="Script" uid="uid://d3hrpncyvmsdi" path="res://scripts/canvasGlassSlab.gd" id="1_1n7q1"]
+
+[node name="canvasTest" type="Node2D"]
+script = ExtResource("1_1n7q1")

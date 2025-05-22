@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2ebblsl2v6hl"]
+
+[ext_resource type="AudioStream" uid="uid://c87vtyefggmpr" path="res://assets/sounds/petal theme - 3:28:25, 8.50 PM.mp3" id="1_stys3"]
+
+[node name="AudioPlayer" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_stys3")
+autoplay = true
+bus = &"Music"

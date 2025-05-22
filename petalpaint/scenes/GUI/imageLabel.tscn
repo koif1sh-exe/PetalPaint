@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3yoxsey3eees"]
+
+[ext_resource type="Texture2D" uid="uid://b4sr65ig36uq8" path="res://assets/exploreAssets/flowerBlu.png" id="1_xpepg"]
+[ext_resource type="Theme" uid="uid://cbvi5qebho0l" path="res://assets/GUI/PetalPaintTheme.tres" id="2_icuae"]
+
+[node name="Image Label" type="Label"]
+offset_right = 40.0
+offset_bottom = 23.0
+theme = ExtResource("2_icuae")
+text = "Example"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -34.0
+offset_top = -1.0
+offset_right = -4.0
+offset_bottom = 36.0
+texture = ExtResource("1_xpepg")
+stretch_mode = 4

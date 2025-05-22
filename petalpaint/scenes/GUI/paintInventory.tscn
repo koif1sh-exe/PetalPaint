@@ -1,0 +1,374 @@
+[gd_scene load_steps=21 format=3 uid="uid://dci1sp30eorog"]
+
+[ext_resource type="Texture2D" uid="uid://bwvwcpo7l24mk" path="res://assets/GUI/PaintMaking/symbols/REDsymbol.PNG" id="2_a36uk"]
+[ext_resource type="Texture2D" uid="uid://sjihnsg0ks5b" path="res://assets/GUI/emptyBottle.png" id="2_fkjde"]
+[ext_resource type="Texture2D" uid="uid://b8g3w6eo312gc" path="res://assets/GUI/Hotbar.PNG" id="2_fv2un"]
+[ext_resource type="Texture2D" uid="uid://7xyqtvosoqes" path="res://assets/GUI/PaintMaking/symbols/ORGsymbol.PNG" id="3_tj2tv"]
+[ext_resource type="Texture2D" uid="uid://clbptg0dow5q7" path="res://assets/GUI/PaintMaking/symbols/YELsymbol.PNG" id="4_ohutq"]
+[ext_resource type="Texture2D" uid="uid://bhwljc2if8l2u" path="res://assets/GUI/PaintMaking/symbols/GRNsymbol.PNG" id="5_ynfba"]
+[ext_resource type="Texture2D" uid="uid://coeyd5r3usjrs" path="res://assets/GUI/PaintMaking/symbols/BLUsymbol.PNG" id="6_bx8rw"]
+[ext_resource type="Texture2D" uid="uid://brghw8wk0cau2" path="res://assets/GUI/PaintMaking/symbols/PURsymbol.PNG" id="7_7o75s"]
+[ext_resource type="Texture2D" uid="uid://drukreaul6ldo" path="res://assets/GUI/PaintMaking/symbols/BLKsymbol.PNG" id="8_sy4hb"]
+[ext_resource type="Texture2D" uid="uid://bnhk0iepimqas" path="res://assets/GUI/PaintMaking/symbols/WHTsymbol.png" id="9_cghxf"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_hqh1d"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e55ae"]
+bg_color = Color(0.6, 0.6, 0.6, 0.505882)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 18.0
+expand_margin_right = 18.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sonnv"]
+bg_color = Color(0.975668, 0.193415, 0.374375, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 18.0
+expand_margin_right = 18.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hqh1d"]
+bg_color = Color(0.99, 0.5742, 0.1584, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 18.0
+expand_margin_right = 18.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a36uk"]
+bg_color = Color(0.897358, 0.771346, 0.236338, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 18.0
+expand_margin_right = 18.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fv2un"]
+bg_color = Color(0.5004, 0.9, 0.234, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 18.0
+expand_margin_right = 18.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fkjde"]
+bg_color = Color(0.234, 0.7446, 0.9, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 18.0
+expand_margin_right = 18.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1vi1v"]
+bg_color = Color(0.4005, 0.234, 0.9, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 18.0
+expand_margin_right = 18.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tj2tv"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 18.0
+expand_margin_right = 18.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ohutq"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 18.0
+expand_margin_right = 18.0
+
+[node name="paintInventory" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="HotbarContainer" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -188.0
+offset_top = -100.0
+offset_right = 187.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme_override_constants/separation = 3
+alignment = 1
+
+[node name="RED" type="CenterContainer" parent="HotbarContainer"]
+layout_mode = 2
+
+[node name="REDBottle" type="TextureRect" parent="HotbarContainer/RED"]
+z_index = 1
+custom_minimum_size = Vector2(40, 70)
+layout_mode = 2
+texture = ExtResource("2_fkjde")
+expand_mode = 1
+
+[node name="REDPaintSlider" type="VSlider" parent="HotbarContainer/RED/REDBottle"]
+custom_minimum_size = Vector2(34, 55)
+layout_mode = 0
+offset_left = 3.0
+offset_top = 13.0
+offset_right = 37.0
+offset_bottom = 68.0
+focus_mode = 0
+theme_override_icons/grabber_disabled = SubResource("ImageTexture_hqh1d")
+theme_override_styles/slider = SubResource("StyleBoxFlat_e55ae")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_sonnv")
+value = 30.0
+editable = false
+
+[node name="Sprite2D" type="Sprite2D" parent="HotbarContainer/RED/REDBottle"]
+z_index = 20
+position = Vector2(21, 38)
+scale = Vector2(0.538462, 0.538462)
+texture = ExtResource("2_a36uk")
+
+[node name="ORG" type="CenterContainer" parent="HotbarContainer"]
+layout_mode = 2
+
+[node name="ORGBottle" type="TextureRect" parent="HotbarContainer/ORG"]
+z_index = 1
+custom_minimum_size = Vector2(40, 70)
+layout_mode = 2
+texture = ExtResource("2_fkjde")
+expand_mode = 1
+
+[node name="ORGPaintSlider" type="VSlider" parent="HotbarContainer/ORG/ORGBottle"]
+custom_minimum_size = Vector2(34, 55)
+layout_mode = 0
+offset_left = 3.0
+offset_top = 13.0
+offset_right = 37.0
+offset_bottom = 68.0
+focus_mode = 0
+theme_override_icons/grabber_disabled = SubResource("ImageTexture_hqh1d")
+theme_override_styles/slider = SubResource("StyleBoxFlat_e55ae")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_hqh1d")
+value = 50.0
+editable = false
+
+[node name="Sprite2D" type="Sprite2D" parent="HotbarContainer/ORG"]
+z_index = 20
+position = Vector2(20, 55)
+scale = Vector2(0.538462, 0.538462)
+texture = ExtResource("3_tj2tv")
+
+[node name="YEL" type="CenterContainer" parent="HotbarContainer"]
+layout_mode = 2
+
+[node name="YELBottle" type="TextureRect" parent="HotbarContainer/YEL"]
+z_index = 1
+custom_minimum_size = Vector2(40, 70)
+layout_mode = 2
+texture = ExtResource("2_fkjde")
+expand_mode = 1
+
+[node name="YELPaintSlider" type="VSlider" parent="HotbarContainer/YEL/YELBottle"]
+custom_minimum_size = Vector2(34, 55)
+layout_mode = 0
+offset_left = 3.0
+offset_top = 13.0
+offset_right = 37.0
+offset_bottom = 68.0
+focus_mode = 0
+theme_override_icons/grabber_disabled = SubResource("ImageTexture_hqh1d")
+theme_override_styles/slider = SubResource("StyleBoxFlat_e55ae")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_a36uk")
+value = 30.0
+editable = false
+
+[node name="Sprite2D" type="Sprite2D" parent="HotbarContainer/YEL"]
+z_index = 20
+position = Vector2(20, 55)
+scale = Vector2(0.538462, 0.538462)
+texture = ExtResource("4_ohutq")
+
+[node name="GRN" type="CenterContainer" parent="HotbarContainer"]
+layout_mode = 2
+
+[node name="GRNBottle" type="TextureRect" parent="HotbarContainer/GRN"]
+z_index = 1
+custom_minimum_size = Vector2(40, 70)
+layout_mode = 2
+texture = ExtResource("2_fkjde")
+expand_mode = 1
+
+[node name="GRNPaintSlider" type="VSlider" parent="HotbarContainer/GRN/GRNBottle"]
+custom_minimum_size = Vector2(34, 55)
+layout_mode = 0
+offset_left = 3.0
+offset_top = 13.0
+offset_right = 37.0
+offset_bottom = 68.0
+focus_mode = 0
+theme_override_icons/grabber_disabled = SubResource("ImageTexture_hqh1d")
+theme_override_styles/slider = SubResource("StyleBoxFlat_e55ae")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_fv2un")
+value = 30.0
+editable = false
+
+[node name="Sprite2D" type="Sprite2D" parent="HotbarContainer/GRN"]
+z_index = 20
+position = Vector2(20, 55)
+scale = Vector2(0.538462, 0.538462)
+texture = ExtResource("5_ynfba")
+
+[node name="BLU" type="CenterContainer" parent="HotbarContainer"]
+layout_mode = 2
+
+[node name="BLUBottle" type="TextureRect" parent="HotbarContainer/BLU"]
+z_index = 1
+custom_minimum_size = Vector2(40, 70)
+layout_mode = 2
+texture = ExtResource("2_fkjde")
+expand_mode = 1
+
+[node name="BLUPaintSlider" type="VSlider" parent="HotbarContainer/BLU/BLUBottle"]
+custom_minimum_size = Vector2(34, 55)
+layout_mode = 0
+offset_left = 3.0
+offset_top = 13.0
+offset_right = 37.0
+offset_bottom = 68.0
+focus_mode = 0
+theme_override_icons/grabber_disabled = SubResource("ImageTexture_hqh1d")
+theme_override_styles/slider = SubResource("StyleBoxFlat_e55ae")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_fkjde")
+value = 30.0
+editable = false
+
+[node name="Sprite2D" type="Sprite2D" parent="HotbarContainer/BLU"]
+z_index = 20
+position = Vector2(20, 55)
+scale = Vector2(0.538462, 0.538462)
+texture = ExtResource("6_bx8rw")
+
+[node name="PUR" type="CenterContainer" parent="HotbarContainer"]
+layout_mode = 2
+
+[node name="PURBottle" type="TextureRect" parent="HotbarContainer/PUR"]
+z_index = 1
+custom_minimum_size = Vector2(40, 70)
+layout_mode = 2
+texture = ExtResource("2_fkjde")
+expand_mode = 1
+
+[node name="PURPaintSlider" type="VSlider" parent="HotbarContainer/PUR/PURBottle"]
+custom_minimum_size = Vector2(34, 55)
+layout_mode = 0
+offset_left = 3.0
+offset_top = 13.0
+offset_right = 37.0
+offset_bottom = 68.0
+focus_mode = 0
+theme_override_icons/grabber_disabled = SubResource("ImageTexture_hqh1d")
+theme_override_styles/slider = SubResource("StyleBoxFlat_e55ae")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_1vi1v")
+value = 30.0
+editable = false
+
+[node name="Sprite2D" type="Sprite2D" parent="HotbarContainer/PUR"]
+z_index = 20
+position = Vector2(20, 55)
+scale = Vector2(0.538462, 0.538462)
+texture = ExtResource("7_7o75s")
+
+[node name="BLK" type="CenterContainer" parent="HotbarContainer"]
+layout_mode = 2
+
+[node name="BLKBottle" type="TextureRect" parent="HotbarContainer/BLK"]
+z_index = 1
+custom_minimum_size = Vector2(40, 70)
+layout_mode = 2
+texture = ExtResource("2_fkjde")
+expand_mode = 1
+
+[node name="BLKPaintSlider" type="VSlider" parent="HotbarContainer/BLK/BLKBottle"]
+custom_minimum_size = Vector2(34, 55)
+layout_mode = 0
+offset_left = 3.0
+offset_top = 13.0
+offset_right = 37.0
+offset_bottom = 68.0
+focus_mode = 0
+theme_override_icons/grabber_disabled = SubResource("ImageTexture_hqh1d")
+theme_override_styles/slider = SubResource("StyleBoxFlat_e55ae")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_tj2tv")
+value = 30.0
+editable = false
+
+[node name="Sprite2D" type="Sprite2D" parent="HotbarContainer/BLK"]
+z_index = 20
+position = Vector2(20, 55)
+scale = Vector2(0.538462, 0.538462)
+texture = ExtResource("8_sy4hb")
+
+[node name="WHT" type="CenterContainer" parent="HotbarContainer"]
+layout_mode = 2
+
+[node name="WHTBottle" type="TextureRect" parent="HotbarContainer/WHT"]
+z_index = 1
+custom_minimum_size = Vector2(40, 70)
+layout_mode = 2
+texture = ExtResource("2_fkjde")
+expand_mode = 1
+
+[node name="WHTPaintSlider" type="VSlider" parent="HotbarContainer/WHT/WHTBottle"]
+custom_minimum_size = Vector2(34, 55)
+layout_mode = 0
+offset_left = 3.0
+offset_top = 13.0
+offset_right = 37.0
+offset_bottom = 68.0
+focus_mode = 0
+theme_override_icons/grabber_disabled = SubResource("ImageTexture_hqh1d")
+theme_override_styles/slider = SubResource("StyleBoxFlat_e55ae")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_ohutq")
+value = 20.0
+editable = false
+
+[node name="Sprite2D" type="Sprite2D" parent="HotbarContainer/WHT"]
+z_index = 20
+position = Vector2(20, 55)
+scale = Vector2(0.538462, 0.538462)
+texture = ExtResource("9_cghxf")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -1
+custom_minimum_size = Vector2(300, 94)
+layout_mode = 0
+offset_left = -198.0
+offset_top = -93.0
+offset_right = 195.0
+offset_bottom = 1.0
+texture = ExtResource("2_fv2un")
+expand_mode = 1

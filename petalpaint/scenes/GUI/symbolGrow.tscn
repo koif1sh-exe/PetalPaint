@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cxpk0r2lk7oog"]
+
+[ext_resource type="Texture2D" uid="uid://bwvwcpo7l24mk" path="res://assets/GUI/PaintMaking/symbols/REDsymbol.PNG" id="1_33wsj"]
+[ext_resource type="Script" uid="uid://bsc80iu4gd3mw" path="res://scripts/symbolGrow.gd" id="1_pslc0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pslc0"]
+size = Vector2(63.1428, 61.2857)
+
+[node name="SymbolArea" type="Area2D"]
+scale = Vector2(0.538462, 0.538462)
+script = ExtResource("1_pslc0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.85712, 0.928571)
+shape = SubResource("RectangleShape2D_pslc0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 20
+texture = ExtResource("1_33wsj")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

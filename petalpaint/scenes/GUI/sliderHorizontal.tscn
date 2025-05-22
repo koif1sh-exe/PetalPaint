@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://isk4vutbwgdp"]
+
+[ext_resource type="Theme" uid="uid://cbvi5qebho0l" path="res://assets/GUI/PetalPaintTheme.tres" id="1_0vdc5"]
+[ext_resource type="Script" uid="uid://cffilety8l41g" path="res://scripts/slider.gd" id="1_asj1j"]
+
+[node name="Slider Horizontal" type="HSlider"]
+z_index = 20
+custom_minimum_size = Vector2(150, 0)
+offset_right = 150.0
+offset_bottom = 41.0
+focus_mode = 0
+theme = ExtResource("1_0vdc5")
+max_value = 1.0
+step = 0.001
+script = ExtResource("1_asj1j")
+
+[connection signal="value_changed" from="." to="." method="_on_value_changed"]

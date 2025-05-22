@@ -1,0 +1,143 @@
+[gd_scene load_steps=7 format=3 uid="uid://euyl1tmhr3as"]
+
+[ext_resource type="Texture2D" uid="uid://b8vyi76368f4l" path="res://assets/GUI/PaintMaking/PaintBG.PNG" id="1_3admp"]
+[ext_resource type="Script" uid="uid://bto0umtldlerr" path="res://scripts/options.gd" id="1_pm3p4"]
+[ext_resource type="PackedScene" uid="uid://ewfqc8fppiin" path="res://scenes/GUI/menuButton.tscn" id="2_1mxcg"]
+[ext_resource type="Texture2D" uid="uid://b4sr65ig36uq8" path="res://assets/exploreAssets/flowerBlu.png" id="2_rvsw6"]
+[ext_resource type="PackedScene" uid="uid://b3yoxsey3eees" path="res://scenes/GUI/imageLabel.tscn" id="4_otcdj"]
+[ext_resource type="PackedScene" uid="uid://isk4vutbwgdp" path="res://scenes/GUI/sliderHorizontal.tscn" id="5_uwrjq"]
+
+[node name="OptionsGUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BG" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(800, 600)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_3admp")
+expand_mode = 1
+
+[node name="ScreenGrid" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -464.5
+offset_top = -269.5
+offset_right = 464.5
+offset_bottom = 269.5
+grow_horizontal = 2
+grow_vertical = 2
+columns = 2
+script = ExtResource("1_pm3p4")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 2
+offset_left = 401.0
+offset_top = 158.0
+offset_right = 409.0
+offset_bottom = 180.0
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="VBoxContainer"]
+layout_mode = 2
+color = Color(0.584031, 0.657557, 0.8244, 1)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_rvsw6")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="OptionsGrid" type="GridContainer" parent="."]
+z_index = 20
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -277.5
+offset_top = -128.0
+offset_right = 288.5
+offset_bottom = 191.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 2
+
+[node name="Master Label" parent="OptionsGrid" instance=ExtResource("4_otcdj")]
+layout_mode = 2
+text = "Master Volume"
+
+[node name="c3" type="CenterContainer" parent="OptionsGrid"]
+layout_mode = 2
+
+[node name="Music Slider2" parent="OptionsGrid/c3" instance=ExtResource("5_uwrjq")]
+layout_mode = 2
+bus_name = "Master"
+
+[node name="Music Label2" parent="OptionsGrid" instance=ExtResource("4_otcdj")]
+layout_mode = 2
+text = "Music"
+
+[node name="c" type="CenterContainer" parent="OptionsGrid"]
+layout_mode = 2
+
+[node name="Music Slider2" parent="OptionsGrid/c" instance=ExtResource("5_uwrjq")]
+layout_mode = 2
+bus_name = "Music"
+
+[node name="Sfx Label" parent="OptionsGrid" instance=ExtResource("4_otcdj")]
+layout_mode = 2
+text = "Sound effects"
+
+[node name="c2" type="CenterContainer" parent="OptionsGrid"]
+layout_mode = 2
+
+[node name="Sfx Slider" parent="OptionsGrid/c2" instance=ExtResource("5_uwrjq")]
+layout_mode = 2
+bus_name = "Sfx"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -325.0
+offset_top = -250.0
+offset_right = 325.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.34902, 0.623529, 0.356863, 1)
+
+[node name="BackBtn" parent="." instance=ExtResource("2_1mxcg")]
+z_index = 20
+layout_mode = 2
+offset_left = 267.0
+offset_top = 77.0
+offset_right = 366.0
+offset_bottom = 133.0
+text = "Back"

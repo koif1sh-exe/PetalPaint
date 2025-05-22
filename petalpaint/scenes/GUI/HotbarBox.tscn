@@ -1,0 +1,60 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpyxahugtlum1"]
+
+[ext_resource type="Texture2D" uid="uid://d1qftrrb3mxmy" path="res://assets/GUI/leafSmall.PNG" id="1_qm38c"]
+[ext_resource type="Texture2D" uid="uid://dahdek36cqbws" path="res://assets/GUI/HotbarBox.PNG" id="3_vqggp"]
+
+[node name="HotbarBox" type="Control"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1102.0
+offset_bottom = -578.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NumberBG" type="TextureRect" parent="."]
+z_index = 1
+layout_mode = 0
+offset_left = 7.0
+offset_top = 30.0
+offset_right = 53.0
+offset_bottom = 53.0
+texture = ExtResource("1_qm38c")
+expand_mode = 1
+
+[node name="Texture" type="TextureRect" parent="."]
+layout_mode = 2
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 44.0
+offset_bottom = 38.0
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="."]
+z_index = 1
+layout_mode = 0
+offset_left = 21.0
+offset_top = 28.0
+offset_right = 49.0
+offset_bottom = 51.0
+text = "0"
+horizontal_alignment = 1
+
+[node name="ReferenceRect" type="ReferenceRect" parent="."]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+offset_right = 50.0
+offset_bottom = 50.0
+border_color = Color(1, 1, 1, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -4.0
+offset_top = -5.0
+offset_right = 51.0
+offset_bottom = 50.0
+texture = ExtResource("3_vqggp")
+expand_mode = 1

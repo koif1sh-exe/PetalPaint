@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmo7qf18u11ik"]
+
+[ext_resource type="Script" uid="uid://cukfc6fwrgo55" path="res://scripts/flower.gd" id="1_vpamr"]
+[ext_resource type="Texture2D" uid="uid://bvm2aun6p04yo" path="res://assets/exploreAssets/flowerRed.png" id="2_5msvc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xony0"]
+radius = 24.0
+
+[node name="FlowerRed" type="Area2D"]
+script = ExtResource("1_vpamr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -24)
+shape = SubResource("CircleShape2D_xony0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, -19)
+texture = ExtResource("2_5msvc")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+z_index = 20
+offset_left = -9.0
+offset_top = -66.0
+offset_right = 31.0
+offset_bottom = -43.0
+text = "<3"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

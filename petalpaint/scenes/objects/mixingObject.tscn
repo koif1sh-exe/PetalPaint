@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://bud2qftqkcuh4"]
+
+[ext_resource type="Script" uid="uid://dh341m1ivacyt" path="res://scripts/mixingObject.gd" id="1_p6eqj"]
+[ext_resource type="Texture2D" uid="uid://byty160tfpbkf" path="res://assets/GUI/PaintMaking/powder.png" id="2_enfbk"]
+[ext_resource type="Texture2D" uid="uid://bnhk0iepimqas" path="res://assets/GUI/PaintMaking/symbols/WHTsymbol.png" id="3_enfbk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4h715"]
+radius = 19.0263
+
+[node name="MixingObject" type="RigidBody2D" groups=["BowlMaterials"]]
+collision_layer = 2
+collision_mask = 5
+mass = 0.5
+gravity_scale = 0.0
+lock_rotation = true
+linear_damp = 10.0
+script = ExtResource("1_p6eqj")
+color = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -18)
+scale = Vector2(1.68, 1.68)
+shape = SubResource("CircleShape2D_4h715")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, -19)
+scale = Vector2(1.68, 1.68)
+texture = ExtResource("2_enfbk")
+
+[node name="Symbol" type="Sprite2D" parent="."]
+visible = false
+y_sort_enabled = true
+position = Vector2(-1, -15)
+scale = Vector2(0.741428, 0.741429)
+texture = ExtResource("3_enfbk")

@@ -1,0 +1,151 @@
+[gd_scene load_steps=8 format=3 uid="uid://cgi6mn47lokd8"]
+
+[ext_resource type="Script" uid="uid://c8a2lwum2g801" path="res://scripts/inventoryGUI.gd" id="1_ecyv7"]
+[ext_resource type="PackedScene" uid="uid://ewfqc8fppiin" path="res://scenes/GUI/menuButton.tscn" id="1_qrryn"]
+[ext_resource type="PackedScene" uid="uid://bpyxahugtlum1" path="res://scenes/GUI/HotbarBox.tscn" id="3_vl7lx"]
+[ext_resource type="Texture2D" uid="uid://b8g3w6eo312gc" path="res://assets/GUI/Hotbar.PNG" id="4_jy3ra"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_ywk5y"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nya4q"]
+bg_color = Color(0.687215, 0.687215, 0.687215, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_top = 8.0
+expand_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mok8o"]
+bg_color = Color(1, 0.752941, 0.0784314, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_top = 8.0
+expand_margin_bottom = 8.0
+
+[node name="InventoryGUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ecyv7")
+
+[node name="BackBtn" parent="." instance=ExtResource("1_qrryn")]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 22.0
+offset_right = 160.0
+offset_bottom = 93.0
+text = "Back"
+
+[node name="OptionsBtn" parent="." instance=ExtResource("1_qrryn")]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 77.0
+offset_right = 182.0
+offset_bottom = 148.0
+text = "Options"
+
+[node name="DayNightBtn" parent="." instance=ExtResource("1_qrryn")]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 131.0
+offset_right = 222.0
+offset_bottom = 202.0
+text = "Day/Night"
+
+[node name="GrayscaleBtn" parent="." instance=ExtResource("1_qrryn")]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 186.0
+offset_right = 234.0
+offset_bottom = 257.0
+text = "Grayscale"
+
+[node name="HotbarContainer" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(700, 100)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -350.0
+offset_top = -100.0
+offset_right = 350.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="c" type="CenterContainer" parent="HotbarContainer"]
+layout_mode = 2
+
+[node name="RedBox" parent="HotbarContainer/c" instance=ExtResource("3_vl7lx")]
+layout_mode = 2
+
+[node name="c2" type="CenterContainer" parent="HotbarContainer"]
+layout_mode = 2
+
+[node name="YelBox" parent="HotbarContainer/c2" instance=ExtResource("3_vl7lx")]
+layout_mode = 2
+
+[node name="c3" type="CenterContainer" parent="HotbarContainer"]
+layout_mode = 2
+
+[node name="BluBox" parent="HotbarContainer/c3" instance=ExtResource("3_vl7lx")]
+layout_mode = 2
+
+[node name="c4" type="CenterContainer" parent="HotbarContainer"]
+layout_mode = 2
+
+[node name="BlkBox" parent="HotbarContainer/c4" instance=ExtResource("3_vl7lx")]
+layout_mode = 2
+
+[node name="c5" type="CenterContainer" parent="HotbarContainer"]
+layout_mode = 2
+
+[node name="WhtBox" parent="HotbarContainer/c5" instance=ExtResource("3_vl7lx")]
+layout_mode = 2
+
+[node name="c6" type="CenterContainer" parent="HotbarContainer"]
+layout_mode = 2
+
+[node name="HoneyMeter" type="HSlider" parent="HotbarContainer/c6"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 30)
+layout_mode = 2
+theme_override_icons/grabber_disabled = SubResource("ImageTexture_ywk5y")
+theme_override_styles/slider = SubResource("StyleBoxFlat_nya4q")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_mok8o")
+value = 50.0
+editable = false
+
+[node name="Container" type="Container" parent="."]
+custom_minimum_size = Vector2(700, 100)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -253.5
+offset_top = -85.0
+offset_right = 253.5
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="CenterContainer" type="CenterContainer" parent="Container"]
+custom_minimum_size = Vector2(700, 100)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Container/CenterContainer"]
+z_index = -1
+custom_minimum_size = Vector2(535, 94)
+layout_mode = 2
+texture = ExtResource("4_jy3ra")
+expand_mode = 1

@@ -1,0 +1,228 @@
+[gd_scene load_steps=13 format=3 uid="uid://ds607w661rnd7"]
+
+[ext_resource type="Script" uid="uid://brsm8v2q81am8" path="res://scripts/paintingGUI.gd" id="1_sandn"]
+[ext_resource type="Texture2D" uid="uid://dvpq0rshiv41x" path="res://assets/GUI/Painting/EasleGUI.png" id="2_jqi27"]
+[ext_resource type="Texture2D" uid="uid://b87tmkhdu6c25" path="res://assets/GUI/Painting/PaintingBackground.png" id="2_ksqh7"]
+[ext_resource type="Script" uid="uid://jte7sma1jkdf" path="res://scripts/colorPicker.gd" id="2_mgnrv"]
+[ext_resource type="Texture2D" uid="uid://b8g3w6eo312gc" path="res://assets/GUI/Hotbar.PNG" id="3_5sxso"]
+[ext_resource type="PackedScene" uid="uid://isk4vutbwgdp" path="res://scenes/GUI/sliderHorizontal.tscn" id="4_vfvvw"]
+[ext_resource type="Script" uid="uid://bhts6duu3yjg" path="res://scripts/ViewportCanvas.gd" id="5_1758n"]
+[ext_resource type="Script" uid="uid://dvraxffdo70u1" path="res://scripts/canvasControl.gd" id="6_v4qfc"]
+[ext_resource type="PackedScene" uid="uid://ewfqc8fppiin" path="res://scenes/GUI/menuButton.tscn" id="9_ksqh7"]
+[ext_resource type="PackedScene" uid="uid://e7ohjwpxf5dj" path="res://scenes/GUI/paintInventoryInteractable.tscn" id="9_qsnr1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5sxso"]
+bg_color = Color(0.305077, 0.305077, 0.305077, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qsnr1"]
+bg_color = Color(0.305882, 0.305882, 0.305882, 1)
+
+[node name="PaintingGUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sandn")
+
+[node name="BG" type="TextureRect" parent="."]
+z_index = -3
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ksqh7")
+expand_mode = 1
+
+[node name="HotbarColors" type="Sprite2D" parent="."]
+position = Vector2(796.5, 227.5)
+scale = Vector2(0.472832, 0.743421)
+texture = ExtResource("3_5sxso")
+
+[node name="HotbarButtons" type="Sprite2D" parent="."]
+position = Vector2(1057, 377)
+rotation = -1.5708
+scale = Vector2(0.483237, 0.743421)
+texture = ExtResource("3_5sxso")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(331.25, 337.391)
+scale = Vector2(0.714203, 0.714203)
+texture = ExtResource("2_jqi27")
+
+[node name="ColorPicker" type="ColorPicker" parent="."]
+layout_mode = 0
+offset_left = 678.0
+offset_top = 300.0
+offset_right = 995.0
+offset_bottom = 908.0
+color = Color(0.829639, 0.646286, 0.767587, 1)
+script = ExtResource("2_mgnrv")
+
+[node name="SizeSlider" parent="." instance=ExtResource("4_vfvvw")]
+layout_mode = 0
+offset_left = 612.0
+offset_top = 180.0
+offset_right = 762.0
+offset_bottom = 221.0
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_5sxso")
+min_value = 2.0
+max_value = 40.0
+value = 40.0
+script = null
+
+[node name="SizeLabel" type="Label" parent="SizeSlider"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 162.0
+offset_top = 7.0
+offset_right = 202.0
+offset_bottom = 43.0
+text = "40"
+
+[node name="OpacitySlider" parent="." instance=ExtResource("4_vfvvw")]
+layout_mode = 0
+offset_left = 611.0
+offset_top = 218.0
+offset_right = 761.0
+offset_bottom = 259.0
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_qsnr1")
+value = 1.0
+script = null
+
+[node name="OpacityLabel" type="Label" parent="OpacitySlider"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 164.0
+offset_top = 5.0
+offset_right = 204.0
+offset_bottom = 41.0
+text = "1"
+
+[node name="SaveBtn" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1020.0
+offset_top = 197.0
+offset_right = 1081.0
+offset_bottom = 228.0
+text = "save :3"
+
+[node name="ClearBtn" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1020.0
+offset_top = 246.0
+offset_right = 1081.0
+offset_bottom = 277.0
+text = "clear"
+
+[node name="ToggleBtn" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1020.0
+offset_top = 293.0
+offset_right = 1081.0
+offset_bottom = 324.0
+text = "left"
+
+[node name="EraserBtn" type="Button" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 1020.0
+offset_top = 339.0
+offset_right = 1081.0
+offset_bottom = 370.0
+text = "brush
+"
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+layout_mode = 0
+offset_left = 75.2499
+offset_top = 54.3914
+offset_right = 575.25
+offset_bottom = 554.391
+script = ExtResource("5_1758n")
+
+[node name="CanvasViewport" type="SubViewport" parent="SubViewportContainer"]
+unique_name_in_owner = true
+transparent_bg = true
+handle_input_locally = false
+render_target_clear_mode = 1
+render_target_update_mode = 4
+
+[node name="CanvasControl" type="Control" parent="SubViewportContainer/CanvasViewport"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 512.0
+offset_bottom = 512.0
+script = ExtResource("6_v4qfc")
+
+[node name="CanvasDisplay" type="TextureRect" parent="SubViewportContainer/CanvasViewport"]
+unique_name_in_owner = true
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRectPrimary" type="ColorRect" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+offset_left = 822.0
+offset_top = 192.0
+offset_right = 872.0
+offset_bottom = 242.0
+color = Color(0.965859, 0.547347, 0.757221, 1)
+
+[node name="ColorRectSecondary" type="ColorRect" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+offset_left = 922.0
+offset_top = 192.0
+offset_right = 972.0
+offset_bottom = 242.0
+color = Color(0.464902, 0.730812, 0.964623, 1)
+
+[node name="ColorRectPredict" type="ColorRect" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+offset_left = 872.0
+offset_top = 192.0
+offset_right = 922.0
+offset_bottom = 242.0
+color = Color(0.710493, 0.688672, 0.783523, 1)
+
+[node name="PaintInteract" parent="." instance=ExtResource("9_qsnr1")]
+unique_name_in_owner = true
+layout_mode = 1
+offset_left = 277.0
+offset_top = -135.0
+offset_right = 277.0
+offset_bottom = -135.0
+scale = Vector2(1.32, 1.32)
+focus_mode = 2
+mouse_filter = 0
+
+[node name="BackBtn" parent="." instance=ExtResource("9_ksqh7")]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 50.0
+offset_top = -5.0
+offset_right = 157.0
+offset_bottom = 66.0
+text = "Back"
+
+[connection signal="color_changed" from="ColorPicker" to="SubViewportContainer/CanvasViewport/CanvasControl" method="_on_color_picker_color_changed"]
+[connection signal="value_changed" from="SizeSlider" to="." method="_on_size_slider_value_changed"]
+[connection signal="value_changed" from="SizeSlider" to="SubViewportContainer/CanvasViewport/CanvasControl" method="_on_size_slider_value_changed"]
+[connection signal="value_changed" from="OpacitySlider" to="." method="_on_opacity_slider_value_changed"]
+[connection signal="value_changed" from="OpacitySlider" to="SubViewportContainer/CanvasViewport/CanvasControl" method="_on_opacity_slider_value_changed"]
+[connection signal="pressed" from="SaveBtn" to="SubViewportContainer" method="_on_button_pressed"]
+[connection signal="pressed" from="ClearBtn" to="SubViewportContainer/CanvasViewport/CanvasControl" method="_on_clearBtn_pressed"]
+[connection signal="pressed" from="ToggleBtn" to="SubViewportContainer/CanvasViewport/CanvasControl" method="_on_toggle_btn_pressed"]
+[connection signal="pressed" from="EraserBtn" to="SubViewportContainer/CanvasViewport/CanvasControl" method="_on_eraser_btn_pressed"]
+[connection signal="pressed" from="BackBtn" to="." method="_on_back_btn_pressed"]
